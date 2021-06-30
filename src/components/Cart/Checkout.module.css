@@ -1,6 +1,6 @@
 .form {
   margin: 1rem 0;
-  height: 19rem;
+  height: 24rem;
   overflow: auto;
 }
 
@@ -18,7 +18,7 @@
   font: inherit;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 20rem;
+  width: 19rem;
   max-width: 100%;
 }
 
@@ -35,7 +35,7 @@
   background-color: transparent;
   border: none;
   border-radius: 25px;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2.25rem;
 }
 
 .actions button:hover,
@@ -47,6 +47,7 @@
   border: 1px solid rgba(96, 125, 139);
   background-color: rgba(96, 125, 139);
   color: white;
+  margin-right: 1rem;
 }
 
 .actions .submit:hover,

@@ -40,13 +40,13 @@ const AvailableMeals = () => {
   }, []);
 
   // Handle loading
-  if (isLoading) {
-    return (
-      <section className={classes.mealsLoading}>
-        <p>Loading...</p>
-      </section>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <section className={classes.mealsLoading}>
+  //       <p>Loading...</p>
+  //     </section>
+  //   );
+  // }
 
   // Http error
   if (httpError) {

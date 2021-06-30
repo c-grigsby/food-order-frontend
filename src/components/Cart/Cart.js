@@ -68,6 +68,7 @@ const Cart = (props) => {
       setHttpError(error.message);
       return;
     }
+    // Clean up
     setIsSubmitting(false);
     setDidSubmit(true);
     cartCtx.clearCart();
