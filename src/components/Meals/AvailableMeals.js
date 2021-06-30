@@ -18,7 +18,6 @@ const AvailableMeals = () => {
       }
       const responseData = await response.json();
 
-      console.log(responseData);
       const loadedMeals = [];
       // fetched data is an obj
       for (const key in responseData) {
@@ -30,7 +29,6 @@ const AvailableMeals = () => {
         });
       }
       setMeals(loadedMeals); //update state
-      console.log(loadedMeals);
     };
     try {
       fetchMeals();

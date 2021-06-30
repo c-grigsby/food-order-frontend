@@ -52,3 +52,19 @@
 .actions .button:active {
   background-color: rgb(37, 74, 93);
 }
+
+.httpError {
+  text-align: center;
+  color: red;
+}
+
+.success {
+  display: flex;
+  font-weight: bold;
+  font-size: 17px;
+  text-align: center;
+}
+
+.success-btn {
+  background: rgb(37, 74, 93);
+}
