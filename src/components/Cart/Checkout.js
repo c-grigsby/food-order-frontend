@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import classes from './Checkout.module.css';
 
+// Props from Cart
 const Checkout = (props) => {
   const nameInputRef = useRef();
   const streetInputRef = useRef();
@@ -46,7 +47,13 @@ const Checkout = (props) => {
       return;
     }
 
-    //submit
+    const userData = {
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostalCode,
+    };
+    props.onSubmit(userData); // submit
   };
 
   const nameClasses = `${formValidity.name ? '' : classes.invalid}`;
