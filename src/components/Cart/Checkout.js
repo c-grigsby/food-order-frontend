@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './Checkout.module.css';
 import useInput from '../../hooks/use-input';
 
 // Props from Cart
 const Checkout = (props) => {
+  const [errorMessage, setErrorMessage] = useState();
   const {
     value: enteredFirstName,
     isValid: enteredFirstNameIsValid,
@@ -76,24 +77,20 @@ const Checkout = (props) => {
     postalCodeInputIsInvalid ? classes.invalid : ''
   }`;
 
-  // Form Validation
-  let formIsValid = false;
-  if (
-    enteredFirstNameIsValid &&
-    enteredLastNameIsValid &&
-    enteredEmailIsValid &&
-    enteredCityIsValid &&
-    enteredStreetIsValid &&
-    enteredPostalCodeIsValid
-  ) {
-    formIsValid = true;
-  }
-
   // On submit
   const formSubmissionHandler = (event) => {
     event.preventDefault();
-
+    let formIsValid;
+    // Form Validation
+    formIsValid =
+      enteredFirstNameIsValid &&
+      enteredLastNameIsValid &&
+      enteredEmailIsValid &&
+      enteredCityIsValid &&
+      enteredStreetIsValid &&
+      enteredPostalCodeIsValid;
     if (!formIsValid) {
+      setErrorMessage(<p>Please submit the requested fields</p>);
       return;
     }
     const userData = {
@@ -111,12 +108,14 @@ const Checkout = (props) => {
     resetStreetInput();
     resetCityInput();
     resetPostalCodeInput();
+    setErrorMessage();
     console.log('Submitted!');
   };
 
   return (
     <form className={classes.form} onSubmit={formSubmissionHandler}>
       <div className={`${classes.control} ${firstNameInputClasses}`}>
+        {errorMessage}
         <label htmlFor='name'>First Name</label>
         <input
           type='text'
@@ -125,9 +124,7 @@ const Checkout = (props) => {
           onBlur={firstNameInputBlurHandler}
           value={enteredFirstName}
         />
-        {firstNameInputIsInvalid && (
-          <p className='error-text'>Please enter first name</p>
-        )}
+        {firstNameInputIsInvalid && <p>Please enter first name</p>}
       </div>
       <div className={`${classes.control} ${lastNameInputClasses}`}>
         <label htmlFor='name'>Last Name</label>
@@ -138,9 +135,7 @@ const Checkout = (props) => {
           onBlur={lastNameInputBlurHandler}
           value={enteredLastName}
         />
-        {lastNameInputIsInvalid && (
-          <p className='error-text'>Please enter last name</p>
-        )}
+        {lastNameInputIsInvalid && <p>Please enter last name</p>}
       </div>
       <div className={`${classes.control} ${emailInputClasses}`}>
         <label htmlFor='name'>Email</label>
@@ -151,9 +146,7 @@ const Checkout = (props) => {
           onBlur={emailInputBlurHandler}
           value={enteredEmail}
         />
-        {emailInputIsInvalid && (
-          <p className='error-text'>Please enter a valid email.</p>
-        )}
+        {emailInputIsInvalid && <p>Please enter a valid email.</p>}
       </div>
       <div className={`${classes.control} ${streetInputClasses}`}>
         <label htmlFor='name'>Street</label>
@@ -164,9 +157,7 @@ const Checkout = (props) => {
           onBlur={streetInputBlurHandler}
           value={enteredStreet}
         />
-        {streetInputIsInvalid && (
-          <p className='error-text'>Please enter a valid street.</p>
-        )}
+        {streetInputIsInvalid && <p>Please enter a valid street.</p>}
       </div>
       <div className={`${classes.control} ${cityInputClasses}`}>
         <label htmlFor='name'>City</label>
@@ -177,9 +168,7 @@ const Checkout = (props) => {
           onBlur={cityInputBlurHandler}
           value={enteredCity}
         />
-        {cityInputIsInvalid && (
-          <p className='error-text'>Please enter a valid city.</p>
-        )}
+        {cityInputIsInvalid && <p>Please enter a valid city.</p>}
       </div>
       <div className={`${classes.control} ${postalCodeInputClasses}`}>
         <label htmlFor='name'>PostalCode</label>
@@ -190,9 +179,7 @@ const Checkout = (props) => {
           onBlur={postalCodeInputBlurHandler}
           value={enteredPostalCode}
         />
-        {postalCodeInputIsInvalid && (
-          <p className='error-text'>Please enter a valid postal code.</p>
-        )}
+        {postalCodeInputIsInvalid && <p>Please enter a valid postal code.</p>}
       </div>
       <div className={classes.actions}>
         <button type='button' onClick={props.onCancel}>
