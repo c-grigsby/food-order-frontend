@@ -16,12 +16,16 @@
 
 .control input {
   font: inherit;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 4px;
   width: 18rem;
   max-width: 100%;
   outline: none;
 }
+
+/* *:focus {
+  outline: none !important;
+} */
 
 .actions {
   display: flex;
