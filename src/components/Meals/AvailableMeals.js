@@ -39,14 +39,14 @@ const AvailableMeals = () => {
     setIsLoading(false);
   }, []);
 
-  // Handle loading
-  // if (isLoading) {
-  //   return (
-  //     <section className={classes.mealsLoading}>
-  //       <p>Loading...</p>
-  //     </section>
-  //   );
-  // }
+  //Handle loading
+  if (isLoading) {
+    return (
+      <section className={classes.mealsLoading}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
 
   // Http error
   if (httpError) {

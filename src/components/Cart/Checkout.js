@@ -13,16 +13,6 @@ const Checkout = (props) => {
     inputBlurHandler: firstNameInputBlurHandler,
     reset: resetFirstNameInput,
   } = useInput((value) => value.trim() !== '');
-
-  const {
-    value: enteredLastName,
-    isValid: enteredLastNameIsValid,
-    hasError: lastNameInputIsInvalid,
-    valueChangeHandler: lastNameInputChangeHandler,
-    inputBlurHandler: lastNameInputBlurHandler,
-    reset: resetLastNameInput,
-  } = useInput((value) => value.trim() !== '');
-
   const {
     value: enteredEmail,
     isValid: enteredEmailIsValid,
@@ -63,10 +53,6 @@ const Checkout = (props) => {
     firstNameInputIsInvalid ? classes.invalid : ''
   }`;
 
-  const lastNameInputClasses = `${
-    lastNameInputIsInvalid ? classes.invalid : ''
-  }`;
-
   const emailInputClasses = `${emailInputIsInvalid ? classes.invalid : ''}`;
 
   const streetInputClasses = `${streetInputIsInvalid ? classes.invalid : ''}`;
@@ -98,7 +84,6 @@ const Checkout = (props) => {
     setErrorMessage();
     const userData = {
       first_name: enteredFirstName,
-      last_name: enteredLastName,
       email: enteredEmail,
       street: enteredStreet,
       city: enteredCity,
@@ -106,11 +91,10 @@ const Checkout = (props) => {
     };
     props.onSubmit(userData); // submit
     resetFirstNameInput();
-    resetLastNameInput();
-    resetEmailInput();
     resetStreetInput();
     resetCityInput();
     resetPostalCodeInput();
+    resetEmailInput();
     setErrorMessage();
     console.log('Submitted!');
   };
