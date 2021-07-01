@@ -84,15 +84,18 @@ const Checkout = (props) => {
     // Form Validation
     formIsValid =
       enteredFirstNameIsValid &&
-      enteredLastNameIsValid &&
+      // enteredLastNameIsValid &&
       enteredEmailIsValid &&
       enteredCityIsValid &&
       enteredStreetIsValid &&
       enteredPostalCodeIsValid;
     if (!formIsValid) {
-      setErrorMessage(<p>Please submit the requested fields</p>);
+      setErrorMessage(
+        <p className={classes.invalid}>Please submit the requested fields</p>
+      );
       return;
     }
+    setErrorMessage();
     const userData = {
       first_name: enteredFirstName,
       last_name: enteredLastName,
@@ -115,8 +118,7 @@ const Checkout = (props) => {
   return (
     <form className={classes.form} onSubmit={formSubmissionHandler}>
       <div className={`${classes.control} ${firstNameInputClasses}`}>
-        {errorMessage}
-        <label htmlFor='name'>First Name</label>
+        <label htmlFor='name'>Name</label>
         <input
           type='text'
           id='name'
@@ -126,7 +128,7 @@ const Checkout = (props) => {
         />
         {firstNameInputIsInvalid && <p>Please enter first name</p>}
       </div>
-      <div className={`${classes.control} ${lastNameInputClasses}`}>
+      {/* <div className={`${classes.control} ${lastNameInputClasses}`}>
         <label htmlFor='name'>Last Name</label>
         <input
           type='text'
@@ -136,7 +138,7 @@ const Checkout = (props) => {
           value={enteredLastName}
         />
         {lastNameInputIsInvalid && <p>Please enter last name</p>}
-      </div>
+      </div> */}
       <div className={`${classes.control} ${emailInputClasses}`}>
         <label htmlFor='name'>Email</label>
         <input
@@ -171,7 +173,7 @@ const Checkout = (props) => {
         {cityInputIsInvalid && <p>Please enter a valid city.</p>}
       </div>
       <div className={`${classes.control} ${postalCodeInputClasses}`}>
-        <label htmlFor='name'>PostalCode</label>
+        <label htmlFor='name'>Postal Code</label>
         <input
           type='text'
           id='text'
@@ -181,6 +183,7 @@ const Checkout = (props) => {
         />
         {postalCodeInputIsInvalid && <p>Please enter a valid postal code.</p>}
       </div>
+      {errorMessage}
       <div className={classes.actions}>
         <button type='button' onClick={props.onCancel}>
           Cancel

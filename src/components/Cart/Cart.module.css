@@ -68,3 +68,9 @@
 .success-btn {
   background: rgb(37, 74, 93);
 }
+
+@media (max-width: 400px) {
+  .total {
+    font-size: 20px;
+  }
+}

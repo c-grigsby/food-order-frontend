@@ -63,3 +63,7 @@
   border-color: #aa0b20;
   background-color: #ffeff1;
 }
+
+p.invalid {
+  color: red;
+}

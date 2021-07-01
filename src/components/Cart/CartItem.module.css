@@ -5,6 +5,9 @@
   border-bottom: 2px solid rgba(96, 125, 139);
   padding: 0.75rem 0;
   margin: 0.5rem 0;
+  background-color: #fff;
+  border-radius: 7px;
+  text-shadow: 10px 10px 20px black;
 }
 
 .cart-item h2 {
@@ -39,12 +42,6 @@
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  .actions {
-    flex-direction: row;
-  }
-}
-
 .cart-item button {
   font: inherit;
   font-weight: bold;
@@ -64,4 +61,28 @@
 .cart-item button:active {
   background-color: rgba(96, 125, 139);
   color: white;
+}
+
+@media (min-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 400px) {
+  .actions {
+    flex-direction: row;
+  }
+
+  .cart-item h2 {
+    font-size: 16px;
+  }
+
+  .amount {
+    font-size: 15px;
+  }
+
+  .cart-item button {
+    font-size: 0.75rem;
+  }
 }
