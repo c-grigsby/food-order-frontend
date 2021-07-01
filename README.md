@@ -1,6 +1,6 @@
 ## Food Order App
 
-Provides a front-end to a food order delivery web application
+Provides a front-end to a food order web application
 
 [Live Demo](https://food-order-frontend.netlify.app)
 

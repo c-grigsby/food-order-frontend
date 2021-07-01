@@ -6,7 +6,7 @@
   animation: meals-appear 1s ease-out forwards;
   background: url('../../assets/leaf.png') no-repeat;
   background-position-x: center;
-  background-position-y: 78%;
+  background-position-y: 80%;
   background-attachment: fixed;
 }
 .meals ul {
@@ -51,6 +51,6 @@
 
 @media screen and (max-width: 600px) {
   .meals {
-    background-position-y: 85%;
+    background-position-y: 87%;
   }
 }
