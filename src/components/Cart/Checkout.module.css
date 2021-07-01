@@ -20,6 +20,7 @@
   border-radius: 4px;
   width: 18rem;
   max-width: 100%;
+  outline: none;
 }
 
 .actions {
