@@ -15,6 +15,7 @@ const Cart = (props) => {
   const cartCtx = useContext(CartContext); //cart data
   const totalAmount = `${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
+
   // Handlers for CartItem
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
@@ -37,18 +38,6 @@ const Cart = (props) => {
     />
   ));
 
-  const modalActions = (
-    <div className={classes.actions}>
-      <button className={classes['button--alt']} onClick={props.onClose}>
-        Close
-      </button>
-      {hasItems && (
-        <button className={classes.button} onClick={orderHandler}>
-          Order
-        </button>
-      )}
-    </div>
-  );
   // Post data to the server
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true); //state for request
@@ -81,6 +70,19 @@ const Cart = (props) => {
       </section>
     );
   }
+  // Cart Btns
+  const modalActions = (
+    <div className={classes.actions}>
+      <button className={classes['button--alt']} onClick={props.onClose}>
+        Close
+      </button>
+      {hasItems && (
+        <button className={classes.button} onClick={orderHandler}>
+          Order
+        </button>
+      )}
+    </div>
+  );
 
   const cartModalContent = (
     <React.Fragment>

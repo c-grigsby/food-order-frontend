@@ -31,14 +31,14 @@ const Checkout = (props) => {
     reset: resetStreetInput,
   } = useInput((value) => value.trim() !== '');
 
-  const {
-    value: enteredCity,
-    isValid: enteredCityIsValid,
-    hasError: cityInputIsInvalid,
-    valueChangeHandler: cityInputChangeHandler,
-    inputBlurHandler: cityInputBlurHandler,
-    reset: resetCityInput,
-  } = useInput((value) => value.trim() !== '');
+  // const {
+  //   value: enteredCity,
+  //   isValid: enteredCityIsValid,
+  //   hasError: cityInputIsInvalid,
+  //   valueChangeHandler: cityInputChangeHandler,
+  //   inputBlurHandler: cityInputBlurHandler,
+  //   reset: resetCityInput,
+  // } = useInput((value) => value.trim() !== '');
 
   const {
     value: enteredPostalCode,
@@ -57,7 +57,7 @@ const Checkout = (props) => {
 
   const streetInputClasses = `${streetInputIsInvalid ? classes.invalid : ''}`;
 
-  const cityInputClasses = `${cityInputIsInvalid ? classes.invalid : ''}`;
+  // const cityInputClasses = `${cityInputIsInvalid ? classes.invalid : ''}`;
 
   const postalCodeInputClasses = `${
     postalCodeInputIsInvalid ? classes.invalid : ''
@@ -72,7 +72,7 @@ const Checkout = (props) => {
       enteredFirstNameIsValid &&
       // enteredLastNameIsValid &&
       enteredEmailIsValid &&
-      enteredCityIsValid &&
+      // enteredCityIsValid &&
       enteredStreetIsValid &&
       enteredPostalCodeIsValid;
     if (!formIsValid) {
@@ -86,13 +86,13 @@ const Checkout = (props) => {
       first_name: enteredFirstName,
       email: enteredEmail,
       street: enteredStreet,
-      city: enteredCity,
+      // city: enteredCity,
       postal_code: enteredPostalCode,
     };
     props.onSubmit(userData); // submit
     resetFirstNameInput();
     resetStreetInput();
-    resetCityInput();
+    // resetCityInput();
     resetPostalCodeInput();
     resetEmailInput();
     setErrorMessage();
@@ -145,7 +145,7 @@ const Checkout = (props) => {
         />
         {streetInputIsInvalid && <p>Please enter a valid street.</p>}
       </div>
-      <div className={`${classes.control} ${cityInputClasses}`}>
+      {/* <div className={`${classes.control} ${cityInputClasses}`}>
         <label htmlFor='name'>City</label>
         <input
           type='text'
@@ -155,7 +155,7 @@ const Checkout = (props) => {
           value={enteredCity}
         />
         {cityInputIsInvalid && <p>Please enter a valid city.</p>}
-      </div>
+      </div> */}
       <div className={`${classes.control} ${postalCodeInputClasses}`}>
         <label htmlFor='name'>Postal Code</label>
         <input
