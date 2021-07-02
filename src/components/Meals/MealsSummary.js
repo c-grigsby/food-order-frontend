@@ -10,8 +10,8 @@ const MealsSummary = () => {
         lunch or dinner at home.
       </p>
       <p>
-        All our meals are cooked with high-quality ingredients, and prepared to
-        order by experienced chefs.
+        All of our meals are cooked with high-quality ingredients, and prepared
+        to order by experienced chefs.
       </p>
     </section>
   );

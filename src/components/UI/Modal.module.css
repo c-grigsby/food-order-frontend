@@ -29,9 +29,12 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500 px) {
   .modal {
+    position: fixed;
     top: 2vh;
+    left: 10%;
+    width: 80%;
   }
 }
 
