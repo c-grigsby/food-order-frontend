@@ -11,7 +11,6 @@ const MealItem = (props) => {
 
   // Handler sent to MealItemForm
   const addToCartHandler = (amount) => {
-    console.log(props.id);
     const cartObj = {
       id: props.id,
       name: props.name,
