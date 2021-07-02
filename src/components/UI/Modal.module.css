@@ -31,7 +31,7 @@
 
 @media (max-width: 400px) {
   .modal {
-    top: 5px;
+    top: 2vh;
   }
 }
 
