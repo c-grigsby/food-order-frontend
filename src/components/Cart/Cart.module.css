@@ -69,14 +69,14 @@
   background: rgb(37, 74, 93);
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 525px) {
   .total {
     font-size: 20px;
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .cart-items {
-    max-height: 12 rem;
+    max-height: 12rem;
   }
 }
