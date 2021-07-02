@@ -1,6 +1,5 @@
 .form {
   margin: 1rem 0;
-  height: 19rem;
   overflow: auto;
 }
 
@@ -22,10 +21,6 @@
   max-width: 100%;
   outline: none;
 }
-
-/* *:focus {
-  outline: none !important;
-} */
 
 .actions {
   display: flex;
