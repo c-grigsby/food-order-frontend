@@ -33,6 +33,15 @@ const Checkout = (props) => {
   } = useInput((value) => value.trim() !== '');
 
   const {
+    value: enteredCity,
+    isValid: enteredCityIsValid,
+    hasError: cityInputIsInvalid,
+    valueChangeHandler: cityInputChangeHandler,
+    inputBlurHandler: cityInputBlurHandler,
+    reset: resetCityInput,
+  } = useInput((value) => value.trim() !== '');
+
+  const {
     value: enteredPostalCode,
     isValid: enteredPostalCodeIsValid,
     hasError: postalCodeInputIsInvalid,
@@ -45,6 +54,7 @@ const Checkout = (props) => {
   const nameInputClasses = ` ${nameInputIsInvalid ? classes.invalid : ''}`;
   const emailInputClasses = `${emailInputIsInvalid ? classes.invalid : ''}`;
   const streetInputClasses = `${streetInputIsInvalid ? classes.invalid : ''}`;
+  const cityInputClasses = `${cityInputIsInvalid ? classes.invalid : ''}`;
   const postalCodeInputClasses = `${
     postalCodeInputIsInvalid ? classes.invalid : ''
   }`;
@@ -58,6 +68,7 @@ const Checkout = (props) => {
       enteredNameIsValid &&
       enteredEmailIsValid &&
       enteredStreetIsValid &&
+      enteredCityIsValid &&
       enteredPostalCodeIsValid;
     if (!formIsValid) {
       setErrorMessage(
@@ -70,6 +81,7 @@ const Checkout = (props) => {
       first_name: enteredName,
       email: enteredEmail,
       street: enteredStreet,
+      city: enteredCity,
       postal_code: enteredPostalCode,
     };
     props.onSubmit(userData); //submits form to backend
@@ -77,6 +89,7 @@ const Checkout = (props) => {
     resetStreetInput();
     resetPostalCodeInput();
     resetEmailInput();
+    resetCityInput();
     setErrorMessage();
   };
 
@@ -111,6 +124,16 @@ const Checkout = (props) => {
           onChange={streetInputChangeHandler}
           onBlur={streetInputBlurHandler}
           value={enteredStreet}
+        />
+      </div>
+      <div className={`${classes.control} ${cityInputClasses}`}>
+        <label htmlFor='name'>City</label>
+        <input
+          type='text'
+          id='text'
+          onChange={cityInputChangeHandler}
+          onBlur={cityInputBlurHandler}
+          value={enteredCity}
         />
       </div>
       <div className={`${classes.control} ${postalCodeInputClasses}`}>

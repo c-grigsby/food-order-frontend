@@ -4,10 +4,12 @@
   align-items: center;
   border-bottom: 2px solid rgba(96, 125, 139);
   padding: 0.75rem 0;
+  padding-right: 0.1rem;
+  padding-left: 0.25rem;
   margin: 0.5rem 0;
   background-color: #fff;
   border-radius: 7px;
-  text-shadow: 10px 10px 21px black;
+  text-shadow: 10px 10px 25px black;
 }
 
 .cart-item h2 {
@@ -45,16 +47,16 @@
 .cart-item button {
   font: inherit;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: rgba(96, 125, 139);
   border: 1px solid rgba(96, 125, 139);
   width: 3rem;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: transparent;
   cursor: pointer;
   margin-left: 1.5rem;
-  margin: 0.25rem;
+  margin: 0.2rem;
 }
 
 .cart-item button:hover,
@@ -70,19 +72,16 @@
 }
 
 @media (max-width: 600px) {
-  .actions {
-    flex-direction: row;
-  }
-
   .cart-item h2 {
     font-size: 16px;
   }
 
   .amount {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .cart-item button {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    width: 1.5rem;
   }
 }

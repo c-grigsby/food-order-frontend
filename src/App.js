@@ -22,7 +22,6 @@ function App() {
       <main>
         <Meals />
       </main>
-      {/* <Welcome /> */}
     </CartProvider>
   );
 }

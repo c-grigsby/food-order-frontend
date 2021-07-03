@@ -2,7 +2,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  max-height: 17rem;
+  max-height: 26rem;
   overflow: auto;
 }
 
@@ -69,14 +69,18 @@
   background: rgb(37, 74, 93);
 }
 
+.review-btn {
+  font: inherit;
+  color: rgba(96, 125, 139);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 2.25rem;
+}
+
 @media screen and (max-width: 525px) {
   .total {
     font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .cart-items {
-    max-height: 12rem;
   }
 }
