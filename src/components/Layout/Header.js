@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
 import classes from './Header.module.css';
-import mealsImage from '../../assets/meals.jpg';
 import logo from '../../assets/leaf.png';
+import mealsImage from '../../assets/meals.jpg';
 import HeaderCartButton from './HeaderCartButton';
+import { React, Fragment } from 'react';
 
 const Header = (props) => {
   return (

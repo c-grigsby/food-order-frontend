@@ -1,16 +1,17 @@
 ## Food Order App
 
-Provides a front-end to a food order web application
+This application is the front-end to a food order application
 
-[Live Demo](https://food-order-frontend.netlify.app)
+[Live Demo of Food Order App](https://food-order-frontend.netlify.app)
 
 ## Project Specifications
 
 - Developed in React
-- REST API for data
-- Submits orders to a backend server
-- Fetches meal data
-- Includes checkout/order form
+- REST API for data 
+- Submits orders to a back-end
+- Fetches available meal data
 - Shopping cart
+- Checkout form
 - Custom hook for form validation
 - Responsive, animations
+- Persists data on [Firebase](https://firebase.google.com/)

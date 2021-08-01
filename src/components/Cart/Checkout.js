@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classes from './Checkout.module.css';
 import useInput from '../../hooks/use-input';
 
-// Props from Cart
+//props from Cart
 const Checkout = (props) => {
   const [errorMessage, setErrorMessage] = useState();
   const {
@@ -50,7 +50,7 @@ const Checkout = (props) => {
     reset: resetPostalCodeInput,
   } = useInput((value) => value.trim() !== '');
 
-  // For 'invalid' css styling
+  // invalid css styling
   const nameInputClasses = ` ${nameInputIsInvalid ? classes.invalid : ''}`;
   const emailInputClasses = `${emailInputIsInvalid ? classes.invalid : ''}`;
   const streetInputClasses = `${streetInputIsInvalid ? classes.invalid : ''}`;
