@@ -1,4 +1,4 @@
-## Food Order App
+## Food Order Front-end
 
 This application is the front-end to a food order application
 
@@ -7,8 +7,8 @@ This application is the front-end to a food order application
 ## Project Specifications
 
 - Developed in React
-- REST API for data 
-- Submits orders to a back-end
+- Utilizes a REST API for data
+- Submits orders to the back-end
 - Fetches available meal data
 - Shopping cart
 - Checkout form
