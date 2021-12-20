@@ -14,7 +14,7 @@ button {
 
 .button:hover,
 .button:active {
-  background-color: #f2b007;
+  background-color: #e7a808;
 }
 
 .icon {
@@ -24,7 +24,7 @@ button {
 }
 
 .badge {
-  background-color: #aa8c4f;
+  background-color: #6d0c03;
   padding: 0.25rem 0.9rem;
   border-radius: 25px;
   margin-left: 0.9rem;
@@ -33,7 +33,7 @@ button {
 
 .button:hover .badge,
 .button:active .badge {
-  background-color: #b79c65;
+  background-color: #881106;
 }
 
 .bump {
