@@ -1,6 +1,6 @@
+import Input from '../../UI/Input';
 import React, { useRef, useState } from 'react';
 import classes from './MealItemForm.module.css';
-import Input from '../../UI/Input';
 
 //props from MealItem
 const MealItemForm = ({id, onAddToCart}) => {
