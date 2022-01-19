@@ -1,3 +1,5 @@
+<div align="center" markdown="1">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" height="150"/>
 
 # Food Order Front-end
@@ -11,6 +13,8 @@
 This application is the front-end to a food order application
 
 [Live Demo of Food Order App](https://food-order-frontend.netlify.app)
+
+</div>
 
 ---
 
